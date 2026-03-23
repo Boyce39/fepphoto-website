@@ -1173,19 +1173,34 @@ h4 {
     top: var(--nav-h);
     left: 0;
     right: 0;
-    background: rgba(26, 18, 9, 0.98);
-    backdrop-filter: blur(12px);
-    padding: 1.5rem 2rem;
+    background: var(--dark); /* Solid background to prevent any white-on-white layer issues */
+    padding: 1rem 2rem 2rem;
     border-top: 1px solid rgba(201, 168, 76, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     gap: 0;
   }
+  .nav-links.mobile-open li {
+    width: 100%;
+    text-align: center;
+  }
   .nav-links.mobile-open a {
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    display: block; /* Fix for padding overlap on inline elements */
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 0;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .nav-links.mobile-open li:last-child a.nav-cta {
+    border-bottom: none;
   }
   .nav-links.mobile-open a::after {
     display: none;
+  }
+  .nav-links.mobile-open .nav-cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
   }
 
   .hero h1 {
